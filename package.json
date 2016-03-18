@@ -1,0 +1,20 @@
+{
+    "name": "fit-progress",
+    "version": "1.0.0",
+    "description": "进度条",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "echo 'Error: no test specified' && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "http://gitlab.baidu.com/tb-component/pc-progress.git"
+    },
+    "author": "huangziyi01",
+    "license": "ISC",
+    "dependencies": {
+        "react": "^0.14.6",
+        "react-dom": "^0.14.6"
+    }
+}
+			
