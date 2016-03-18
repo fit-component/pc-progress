@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import $ from 'jquery'
+import _ from 'lodash'
 import './index.scss'
 
 export default class Progress extends React.Component {
