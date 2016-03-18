@@ -19,7 +19,7 @@ export default class Progress extends React.Component {
 
         return (
             <div {...others} className={classes}>
-                进度条插件
+                进度条插件更新,依赖应该自动更新
             </div>
         )
     }
