@@ -1,6 +1,6 @@
 {
   "name": "fit-progress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "进度条",
   "main": "lib/index.js",
   "scripts": {
