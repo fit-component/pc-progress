@@ -7,6 +7,11 @@ export default class Demo extends React.Component {
             <div>
                 <Progress percent="30"
                           status="active"/>
+                <Progress percent="40"
+                          status="error"/>
+                <Progress percent="50"
+                          status="success"/>
+                <Progress percent="100"/>
             </div>
         )
     }

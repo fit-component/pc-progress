@@ -15,9 +15,15 @@ export default class Progress extends React.Component {
             [className] : className
         })
 
+        // 如果百分比是100,则强制转为success状态
+        let statusFinally = status
+        if (parseInt(percent) === 100) {
+            statusFinally = 'success'
+        }
+
         const progressClasses = classNames({
-            progress: true,
-            [status]: true
+            progress       : true,
+            [statusFinally]: true
         })
 
         return (
