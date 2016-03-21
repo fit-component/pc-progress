@@ -11,7 +11,7 @@ const colors = {
     warning: '#fa0'
 }
 
-export default class Progress extends React.Component {
+export default class ProgressCircle extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -45,7 +45,7 @@ export default class Progress extends React.Component {
     }
 }
 
-Progress.defaultProps = {
+ProgressCircle.defaultProps = {
     // @desc 当前进度百分比
     percent: 0,
 
