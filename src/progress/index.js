@@ -9,20 +9,34 @@ export default class Progress extends React.Component {
     }
 
     render() {
-        const {className, children, ...others} = this.props
+        const {className, children, percent, status, ...others} = this.props
         const classes = classNames({
             '_namespace': true,
             [className] : className
         })
 
+        const progressClasses = classNames({
+            progress: true,
+            [status]: true
+        })
+
         return (
             <div {...others} className={classes}>
-                进度条插件更新,依赖应该自动更新
+                <div className={progressClasses}
+                     style={{width:`${percent}%`}}></div>
             </div>
         )
     }
 }
 
 Progress.defaultProps = {
+    // @desc 当前进度百分比
+    percent: 0,
 
+    // @desc 是否显示文字辅助提示
+    showLabel: false,
+
+    // @desc 当前状态
+    // @enum normal active error success
+    status: 'normal'
 }
