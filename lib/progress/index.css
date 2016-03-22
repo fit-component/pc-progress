@@ -32,6 +32,12 @@
       background-color: #f50; }
     .lib-pc-progress-lib-progress .progress.success {
       background-color: #87d068; }
+    .lib-pc-progress-lib-progress .progress .label {
+      color: white;
+      position: absolute;
+      right: 0;
+      top: -4px;
+      font-size: 12px; }
 
 @-webkit-keyframes progress-active {
   0% {
