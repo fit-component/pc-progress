@@ -6,6 +6,11 @@ const defaultStyle = {
     marginRight: 20
 }
 
+const largeStyle = {
+    width      : 200,
+    marginRight: 20
+}
+
 export default class Demo extends React.Component {
     render() {
         return (
@@ -20,10 +25,10 @@ export default class Demo extends React.Component {
                                 showLabel={true}/>
                 <ProgressCircle percent="50"
                                 status="success"
-                                style={defaultStyle}
+                                style={largeStyle}
                                 showLabel={true}/>
                 <ProgressCircle percent="100"
-                                style={defaultStyle}
+                                style={largeStyle}
                                 showLabel={true}/>
             </div>
         )

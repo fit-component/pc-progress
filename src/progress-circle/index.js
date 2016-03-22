@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 import Circle from './circle'
 import './index.scss'
@@ -14,7 +15,16 @@ const colors = {
 export default class ProgressCircle extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            width: 150
+        }
+    }
+
+    componentDidMount() {
+        this.dom = ReactDOM.findDOMNode(this)
+        this.setState({
+            width: this.dom.clientWidth
+        })
     }
 
     render() {
@@ -31,11 +41,22 @@ export default class ProgressCircle extends React.Component {
         }
 
         const progressClasses = classNames({
-            progress       : true
+            progress: true
         })
+
+        const labelStyle = {
+            fontSize: this.state.width / 7
+        }
 
         return (
             <div {...others} className={classes}>
+                {this.props.showLabel ?
+                    <div className="absolute-box"
+                         style={labelStyle}>
+                        {percent}%
+                    </div> : null
+                }
+
                 <Circle className={progressClasses}
                         percent={percent}
                         strokeColor={color}

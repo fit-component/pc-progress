@@ -37,6 +37,13 @@
         &.success {
             background-color: $success-color;
         }
+        .label {
+            color: white;
+            position: absolute;
+            right: 0;
+            top: -4px;
+            font-size: 12px;
+        }
     }
 }
 

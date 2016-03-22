@@ -9,7 +9,7 @@ export default class Progress extends React.Component {
     }
 
     render() {
-        const {className, children, percent, status, ...others} = this.props
+        const {className, showLabel, percent, status, ...others} = this.props
         const classes = classNames({
             '_namespace': true,
             [className] : className
@@ -29,7 +29,11 @@ export default class Progress extends React.Component {
         return (
             <div {...others} className={classes}>
                 <div className={progressClasses}
-                     style={{width:`${percent}%`}}></div>
+                     style={{width:`${percent}%`}}>
+                    {showLabel ?
+                        <span className="label">{percent}%</span> : null
+                    }
+                </div>
             </div>
         )
     }
