@@ -1,0 +1,56 @@
+.lib-pc-progress-lib-progress {
+  display: inline-block;
+  height: 10px;
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 10px; }
+  .lib-pc-progress-lib-progress .progress {
+    position: relative;
+    height: 10px;
+    width: 0;
+    margin: 0;
+    border-radius: 10px; }
+    .lib-pc-progress-lib-progress .progress.normal {
+      background-color: #2db7f5; }
+    .lib-pc-progress-lib-progress .progress.active {
+      background-color: #2db7f5;
+      -webkit-transition: all .3s linear 0s;
+      transition: all .3s linear 0s; }
+      .lib-pc-progress-lib-progress .progress.active:before {
+        content: "";
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #fff;
+        border-radius: 10px;
+        -webkit-animation: progress-active 2s ease infinite;
+                animation: progress-active 2s ease infinite; }
+    .lib-pc-progress-lib-progress .progress.error {
+      background-color: #f50; }
+    .lib-pc-progress-lib-progress .progress.success {
+      background-color: #87d068; }
+    .lib-pc-progress-lib-progress .progress .label {
+      color: white;
+      position: absolute;
+      right: 0;
+      top: -4px;
+      font-size: 12px; }
+
+@-webkit-keyframes progress-active {
+  0% {
+    opacity: .3;
+    width: 0; }
+  100% {
+    opacity: 0;
+    width: 100%; } }
+
+@keyframes progress-active {
+  0% {
+    opacity: .3;
+    width: 0; }
+  100% {
+    opacity: 0;
+    width: 100%; } }
