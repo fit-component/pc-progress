@@ -1,6 +1,6 @@
 {
   "name": "fit-progress",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "description": "进度条",
   "main": "lib/index.js",
   "scripts": {
@@ -12,9 +12,5 @@
   },
   "author": "huangziyi01",
   "license": "ISC",
-  "dependencies": {
-    "react": "^0.14.7",
-    "classnames": "^2.2.1",
-    "react-dom": "^0.14.7"
-  }
+  "dependencies": {}
 }
