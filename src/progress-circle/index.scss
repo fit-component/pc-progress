@@ -1,4 +1,7 @@
+@import "../../../../../style/reset";
+
 & {
+    @include reset;
     display: inline-block;
     position: relative;
     width: 100%;

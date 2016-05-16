@@ -1,6 +1,8 @@
 @import "../../../../../style/mixins";
+@import "../../../../../style/reset";
 
 & {
+    @include reset;
     display: inline-block;
     height: 10px;
     width: 100%;
@@ -41,7 +43,7 @@
             color: white;
             position: absolute;
             right: 0;
-            top: -4px;
+            top: -2px;
             font-size: 12px;
         }
     }
