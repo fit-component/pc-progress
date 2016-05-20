@@ -15,11 +15,11 @@
         margin: 0;
         border-radius: 10px;
         &.normal {
-            background-color: $primary-color;
+            background-color: $info-color;
         }
         &.active {
-            background-color: $primary-color;
-            transition: all .3s linear 0s;
+            background-color: $info-color;
+            transition: all .3s linear 0;
             &:before {
                 content: "";
                 opacity: 0;
