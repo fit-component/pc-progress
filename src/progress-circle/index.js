@@ -49,7 +49,7 @@ export default class ProgressCircle extends React.Component {
         }
 
         return (
-            <div {...others} className={classes}>
+            <div className={classes}>
                 {this.props.showLabel ?
                     <div className="absolute-box"
                          style={labelStyle}>

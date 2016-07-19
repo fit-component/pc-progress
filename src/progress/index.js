@@ -27,7 +27,7 @@ export default class Progress extends React.Component {
         })
 
         return (
-            <div {...others} className={classes}>
+            <div className={classes}>
                 <div className={progressClasses}
                      style={{width:`${percent}%`}}>
                     {showLabel ?
