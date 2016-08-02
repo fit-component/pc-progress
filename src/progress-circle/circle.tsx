@@ -1,7 +1,14 @@
-import React from 'react'
-import classNames from 'classnames'
+import * as React from 'react'
+import * as classNames from 'classnames'
 
-export default class Circle extends React.Component {
+export default class Circle extends React.Component <any, any> {
+    static defaultProps = {
+        strokeWidth: 6,
+        strokeColor: '#3FC7FA',
+        trailWidth: 6,
+        trailColor: '#D9D9D9'
+    }
+
     render() {
         const props = Object.assign({}, this.props)
         const strokeWidth = props.strokeWidth
@@ -11,9 +18,9 @@ export default class Circle extends React.Component {
         a ${radius},${radius} 0 1 1 0,-${2 * radius}`
         const len = Math.PI * 2 * radius
         const pathStyle = {
-            'strokeDasharray' : `${len}px ${len}px`,
+            'strokeDasharray': `${len}px ${len}px`,
             'strokeDashoffset': `${((100 - props.percent) / 100 * len)}px`,
-            'transition'      : 'stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease'
+            'transition': 'stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease'
         }
         const classes = classNames({
             [props.className]: props.className
@@ -36,11 +43,4 @@ export default class Circle extends React.Component {
             </svg>
         )
     }
-}
-
-Circle.defaultProps = {
-    strokeWidth: 6,
-    strokeColor: '#3FC7FA',
-    trailWidth : 6,
-    trailColor : '#D9D9D9'
 }

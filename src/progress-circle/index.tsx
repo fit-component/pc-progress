@@ -1,23 +1,27 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import classNames from 'classnames'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import * as classNames from 'classnames'
+import * as modules from './module'
+import TransmitTransparent from '../../../../common/transmit-transparently/src'
 import Circle from './circle'
 import './index.scss'
 
-const colors = {
+const colors: any = {
     primary: '#2db7f5',
-    active : '#2db7f5',
+    active: '#2db7f5',
     success: '#87d068',
-    error  : '#f50',
+    error: '#f50',
     warning: '#fa0'
 }
 
-export default class ProgressCircle extends React.Component {
-    constructor(props) {
+@TransmitTransparent()
+export default class ProgressCircle extends React.Component<modules.PropsDefine, modules.StateDefine> {
+    static defaultProps = modules.defaultProps
+    private dom: Element
+
+    constructor(props: modules.PropsDefine) {
         super(props)
-        this.state = {
-            width: 150
-        }
+        this.state = modules.defaultState
     }
 
     componentDidMount() {
@@ -28,15 +32,14 @@ export default class ProgressCircle extends React.Component {
     }
 
     render() {
-        const {className, percent, status, ...others} = this.props
         const classes = classNames({
             '_namespace': true,
-            [className] : className
+            [this.props['className']]: !!this.props['className']
         })
 
         // 如果百分比是100,则强制转为success状态
-        let color = colors[status]
-        if (parseInt(percent) === 100) {
+        let color = colors[this.props.status]
+        if (this.props.percent === 100) {
             color = colors.success
         }
 
@@ -49,18 +52,18 @@ export default class ProgressCircle extends React.Component {
         }
 
         return (
-            <div className={classes}>
+            <div className={classes} {...this.props.others}>
                 {this.props.showLabel ?
                     <div className="absolute-box"
-                         style={labelStyle}>
-                        {percent}%
+                        style={labelStyle}>
+                        {this.props.percent}%
                     </div> : null
                 }
 
                 <Circle className={progressClasses}
-                        percent={percent}
-                        strokeColor={color}
-                        style={{width:`${percent}%`}}/>
+                    percent={this.props.percent}
+                    strokeColor={color}
+                    style={{ width: `${this.props.percent}%` }}/>
             </div>
         )
     }
